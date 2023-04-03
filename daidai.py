@@ -2,15 +2,8 @@ import pikepdf
 from tqdm import tqdm
 import PyPDF2
 
-#crea un file di testo con numeri da 1 a n o cimunque un file con un list di possibili password
-f = open("passwords.txt", "w")
-
-for i in range (123400,123457):
-    f.write(str(i)+"\n")
-
-f.close()
-
-
+#copio il file con le password su una lista
+#in questo caso il file passwords.txt contiene le 100000 password più usate ad oggi nel mondo
 passwords = [line.strip() for line in open("passwords.txt")]
 print(passwords)
 
@@ -19,7 +12,7 @@ key = ""
 for password in tqdm(passwords, "Decrypting PDF:"):
     try:
         #apro il file pdf da forzare
-        with pikepdf.open("nomefile.pdf", password=password) as pdf:
+        with pikepdf.open("eiei.pdf", password=password) as pdf:
             key = password
             print("Password trovata: ", password)
             break
