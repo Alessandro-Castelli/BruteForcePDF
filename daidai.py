@@ -20,4 +20,4 @@ for password in tqdm(passwords, "Decrypting PDF:"):
         continue
 
 if key == "" :
-    print("Mi dispiace compa non l'ho trovata... che te devo di... prova con qualche altra combinazione")
+    print("Password non trovata...tenta con un altro dizionario")
